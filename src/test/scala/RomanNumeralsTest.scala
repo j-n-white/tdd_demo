@@ -1,6 +1,9 @@
-import org.scalatest.flatspec.AnyFlatSpec
-import org.scalatest.matchers.should
+import org.scalatest.funspec.AnyFunSpec
 
-class RomanNumeralsTest extends AnyFlatSpec with should.Matchers {
-
+class RomanNumeralsTest extends AnyFunSpec {
+  describe("RomanNumerals") {
+    it("returns a string") {
+      assert(1.toRomanNumerals().isInstanceOf[String])
+    }
+  }
 }
