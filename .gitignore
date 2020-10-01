@@ -1,4 +1,4 @@
 /.idea/
-tdd demo.iml
-/project/target/
 /target/
+/project/target/
+/project/project/target/
