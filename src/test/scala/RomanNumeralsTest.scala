@@ -12,5 +12,8 @@ class RomanNumeralsTest extends AnyFunSpec {
     it("when called on 3 then it returns \"III\"") {
       assertResult("III")(3.toRomanNumerals)
     }
+    it("when called on 4 then it returns \"IV\"") {
+      assertResult("IV")(4.toRomanNumerals)
+    }
   }
 }
