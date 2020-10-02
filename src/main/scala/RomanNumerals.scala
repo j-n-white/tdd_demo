@@ -13,14 +13,17 @@ object RomanNumerals {
       }
 
       appendStringForNumber("M", 1000)
+
       appendStringForNumber("CM", 900)
       appendStringForNumber("D", 500)
       appendStringForNumber("CD", 400)
       appendStringForNumber("C", 100)
+
       appendStringForNumber("XC", 90)
       appendStringForNumber("L", 50)
       appendStringForNumber("XL", 40)
       appendStringForNumber("X", 10)
+
       appendStringForNumber("IX", 9)
       appendStringForNumber("V", 5)
       appendStringForNumber("IV", 4)
