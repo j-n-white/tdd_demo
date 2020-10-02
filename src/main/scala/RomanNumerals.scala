@@ -13,6 +13,7 @@ object RomanNumerals {
       }
 
       appendCharacterForNumber('X', 10)
+      appendCharacterForNumber('X', 10)
       if (remaining == 9) sb.append("IX")
       else {
         appendCharacterForNumber('V', 5)
