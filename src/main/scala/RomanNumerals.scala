@@ -2,7 +2,7 @@ object RomanNumerals {
 
   implicit class ToRomanNumerals(self: Int) {
     def toRomanNumerals: String = {
-      if (self >= 4000) throw new IllegalArgumentException()
+      if (self >= 4000) throw new IllegalArgumentException("Roman numerals can only be used on values between 1 and 3999")
 
       val sb = new StringBuilder()
       var remaining = self
