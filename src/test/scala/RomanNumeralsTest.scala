@@ -37,7 +37,8 @@ class RomanNumeralsTest extends AnyPropSpec with TableDrivenPropertyChecks {
 
   private val invalidInputs = Table(
     "invalidInput",
-    4000
+    4000,
+    0
   )
 
   property("Given the toRomanNumerals function when called with an out of range integer then throws an error") {
