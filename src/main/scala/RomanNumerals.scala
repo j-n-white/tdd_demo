@@ -4,8 +4,11 @@ object RomanNumerals {
     def toRomanNumerals: String = {
       val sb = new StringBuilder()
       var remaining = self
-      if (remaining == 10) sb.append("X")
-      else if (remaining == 9) sb.append("IX")
+      if (remaining >= 10) {
+        sb.append("X")
+        remaining -= 10
+      }
+      if (remaining == 9) sb.append("IX")
       else {
         if (remaining >= 5) {
           sb.append("V")
