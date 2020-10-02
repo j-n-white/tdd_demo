@@ -12,6 +12,7 @@ object RomanNumerals {
         }
       }
 
+      appendStringForNumber("CM", 900)
       appendStringForNumber("D", 500)
       appendStringForNumber("CD", 400)
       appendStringForNumber("C", 100)
