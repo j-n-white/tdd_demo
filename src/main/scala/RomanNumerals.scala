@@ -6,13 +6,12 @@ object RomanNumerals {
       var remaining = self
 
       def appendCharacterForNumber(char: Char, number: Int): Unit = {
-        if (remaining >= number) {
+        while (remaining >= number) {
           sb.append(char)
           remaining -= number
         }
       }
 
-      appendCharacterForNumber('X', 10)
       appendCharacterForNumber('X', 10)
       if (remaining == 9) sb.append("IX")
       else {
