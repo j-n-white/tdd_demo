@@ -3,7 +3,7 @@ import org.scalatest.prop.TableDrivenPropertyChecks
 import org.scalatest.propspec.AnyPropSpec
 
 class RomanNumeralsTest extends AnyPropSpec with TableDrivenPropertyChecks {
-  private val testCases = Table(
+  private val validInputs = Table(
     ("input", "expected"),
     (1, "I"),
     (2, "II"),
@@ -32,13 +32,21 @@ class RomanNumeralsTest extends AnyPropSpec with TableDrivenPropertyChecks {
     (3999, "MMMCMXCIX")
   )
   property("Given the toRomanNumerals function when called with an integer it returns the correct string") {
-    forAll(testCases) { (input: Int, expected: String) => assertResult(expected)(input.toRomanNumerals) }
+    forAll(validInputs) { (input: Int, expected: String) => assertResult(expected)(input.toRomanNumerals) }
   }
 
+  private val invalidInputs = Table(
+    "invalidInput",
+    4000
+  )
+
   property("Given the toRomanNumerals function when called with an out of range integer then throws an error") {
-    val caught = intercept[IllegalArgumentException] {
-      4000.toRomanNumerals
+    forAll(invalidInputs) { (invalidInput: Int) => {
+      val caught = intercept[IllegalArgumentException] {
+        invalidInput.toRomanNumerals
+      }
+      assertResult("Roman numerals can only be generated for values between 1 and 3999")(caught.getMessage)
     }
-    assertResult("Roman numerals can only be used on values between 1 and 3999")(caught.getMessage)
+    }
   }
 }
