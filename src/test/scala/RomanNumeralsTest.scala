@@ -36,8 +36,9 @@ class RomanNumeralsTest extends AnyPropSpec with TableDrivenPropertyChecks {
   }
 
   property("Given the toRomanNumerals function when called with an out of range integer then throws an error") {
-    assertThrows[IllegalArgumentException] {
+    val caught = intercept[IllegalArgumentException] {
       4000.toRomanNumerals
     }
+    assertResult("Roman numerals can only be used on values between 1 and 3999")(caught.getMessage)
   }
 }
