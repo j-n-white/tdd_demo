@@ -34,4 +34,10 @@ class RomanNumeralsTest extends AnyPropSpec with TableDrivenPropertyChecks {
   property("Given the toRomanNumerals function when called with an integer it returns the correct string") {
     forAll(testCases) { (input: Int, expected: String) => assertResult(expected)(input.toRomanNumerals) }
   }
+
+  property("Given the toRomanNumerals function when called with an out of range integer then throws an error") {
+    assertThrows[IllegalArgumentException] {
+      4000.toRomanNumerals
+    }
+  }
 }
