@@ -13,7 +13,8 @@ class RomanNumeralsTest extends AnyPropSpec with TableDrivenPropertyChecks {
     (6, "VI"),
     (7, "VII"),
     (8, "VIII"),
-    (9, "IX")
+    (9, "IX"),
+    (10, "X")
   )
   property("Given the toRomanNumerals function when called with an integer it returns the correct string") {
     forAll(testCases) { (input: Int, expected: String) => assertResult(expected)(input.toRomanNumerals) }
