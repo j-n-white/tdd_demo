@@ -3,11 +3,10 @@ object RomanNumerals {
   implicit class ToRomanNumerals(self: Int) {
     def toRomanNumerals: String = {
       val sb = new StringBuilder()
-      var remaining = self;
+      var remaining = self
       if (remaining == 10) sb.append("X")
-      else if (remaining == 9) {
-        sb.append("IX")
-      } else {
+      else if (remaining == 9) sb.append("IX")
+      else {
         if (remaining >= 5) {
           sb.append("V")
           remaining -= 5
