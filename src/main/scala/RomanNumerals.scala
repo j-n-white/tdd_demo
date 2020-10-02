@@ -12,6 +12,7 @@ object RomanNumerals {
         }
       }
 
+      appendStringForNumber("L", 50)
       appendStringForNumber("XL", 40)
       appendStringForNumber("X", 10)
       appendStringForNumber("IX", 9)
