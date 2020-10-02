@@ -2,6 +2,7 @@ object RomanNumerals {
 
   implicit class ToRomanNumerals(self: Int) {
     def toRomanNumerals: String = {
+      if (self >=4000) throw new IllegalArgumentException()
       val sb = new StringBuilder()
       var remaining = self
 
